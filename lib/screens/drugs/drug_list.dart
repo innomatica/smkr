@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:provider/provider.dart';
 
 import '../../logic/drug.dart';
@@ -68,6 +68,7 @@ class _DrugListState extends State<DrugList> {
         },
       );
     } else {
+      // FIXME: use mobile_scanner (https://pub.dev/packages/mobile_scanner)
       barcode = await FlutterBarcodeScanner.scanBarcode(
           '#ff6666', "취소 (약이름으로 찾기)", false, ScanMode.DEFAULT);
     }
