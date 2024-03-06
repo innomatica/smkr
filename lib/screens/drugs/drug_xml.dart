@@ -3,7 +3,7 @@ import 'package:xml/xml.dart';
 
 class DrugXml extends StatelessWidget {
   final String xml;
-  const DrugXml({required this.xml, Key? key}) : super(key: key);
+  const DrugXml({required this.xml, super.key});
 
   @override
   Widget build(BuildContext context) {

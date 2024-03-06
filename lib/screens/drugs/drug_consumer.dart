@@ -4,7 +4,7 @@ import '../../models/drug.dart';
 
 class DrugConsumerInfo extends StatelessWidget {
   final Drug drug;
-  const DrugConsumerInfo({required this.drug, Key? key}) : super(key: key);
+  const DrugConsumerInfo({required this.drug, super.key});
 
   @override
   Widget build(BuildContext context) {

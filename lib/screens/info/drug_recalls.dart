@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class DrugRecall extends StatelessWidget {
   final List<dynamic> recallInfo;
-  const DrugRecall({required this.recallInfo, Key? key}) : super(key: key);
+  const DrugRecall({required this.recallInfo, super.key});
 
   Widget _buildRecallInfo() {
     return ListView.builder(

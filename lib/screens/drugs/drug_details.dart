@@ -10,7 +10,7 @@ import 'drug_xml.dart';
 
 class DrugDetails extends StatefulWidget {
   final Drug drug;
-  const DrugDetails({required this.drug, Key? key}) : super(key: key);
+  const DrugDetails({required this.drug, super.key});
 
   @override
   State<DrugDetails> createState() => _DrugDetailsState();
@@ -30,7 +30,7 @@ class _DrugDetailsState extends State<DrugDetails> {
       final easyInfo =
           await DataGoKrService.getDrugEasyInfo(widget.drug.drugId);
 
-      if (!mounted) return false;
+      if (!context.mounted) return false;
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
 
       if (easyInfo == null) {
@@ -208,7 +208,7 @@ class _DrugDetailsState extends State<DrugDetails> {
                     (widget.drug.consumerInfo!.isEmpty)) {
                   await getDrugEasyInfo();
                 }
-                if (!mounted) return;
+                if (!context.mounted) return;
 
                 if (widget.drug.consumerInfo!.isNotEmpty) {
                   if (widget.drug.consumerInfo!.containsKey('no data')) {

@@ -4,7 +4,7 @@ import '../../models/drug.dart';
 
 class DrugIngredients extends StatelessWidget {
   final Drug drug;
-  const DrugIngredients({required this.drug, Key? key}) : super(key: key);
+  const DrugIngredients({required this.drug, super.key});
 
   Widget _buildIngredient(BuildContext context) {
     final materials = drug.drugInfo['materials'];

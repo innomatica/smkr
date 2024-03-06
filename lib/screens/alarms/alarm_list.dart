@@ -11,7 +11,7 @@ import '../../models/schedule.dart';
 import '../../shared/constants.dart';
 
 class AlarmList extends StatefulWidget {
-  const AlarmList({Key? key}) : super(key: key);
+  const AlarmList({super.key});
 
   @override
   State<AlarmList> createState() => _AlarmListState();
@@ -196,7 +196,7 @@ class _AlarmListState extends State<AlarmList> with WidgetsBindingObserver {
                             measurementValue = null;
                             measurementNote == null;
 
-                            if (!mounted) return;
+                            if (!context.mounted) return;
                             Navigator.pop(context);
                           } else {
                             debugPrint('failed to validate');
@@ -345,7 +345,7 @@ class _AlarmListState extends State<AlarmList> with WidgetsBindingObserver {
                       onPressed: () async {
                         await _createLog(alarm);
                         setState(() {});
-                        if (!mounted) return;
+                        if (!context.mounted) return;
                         Navigator.pop(context);
                       },
                       child: Text(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AdminDisposiiton extends StatelessWidget {
   final List<dynamic> adminInfo;
-  const AdminDisposiiton({required this.adminInfo, Key? key}) : super(key: key);
+  const AdminDisposiiton({required this.adminInfo, super.key});
 
   Widget _buildAdminInfo() {
     return ListView.builder(

@@ -6,7 +6,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../shared/constants.dart';
 
 class AppInfo extends StatefulWidget {
-  const AppInfo({Key? key}) : super(key: key);
+  const AppInfo({super.key});
 
   @override
   State<AppInfo> createState() => _AppInfoState();

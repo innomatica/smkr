@@ -11,7 +11,7 @@ import 'admin_disposition.dart';
 import 'drug_recalls.dart';
 
 class InfoList extends StatefulWidget {
-  const InfoList({Key? key}) : super(key: key);
+  const InfoList({super.key});
 
   @override
   State<InfoList> createState() => _InfoListState();

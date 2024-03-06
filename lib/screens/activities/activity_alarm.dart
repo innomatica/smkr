@@ -12,8 +12,8 @@ class ActivityAlarm extends StatefulWidget {
   const ActivityAlarm({
     required this.activity,
     required this.schedule,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<ActivityAlarm> createState() => _ActivityAlarmState();
@@ -225,7 +225,7 @@ class _ActivityAlarmState extends State<ActivityAlarm> {
                     await activityBloc.update(widget.activity);
                     await activityBloc.addSchedule(widget.schedule);
 
-                    if (!mounted) return;
+                    if (!context.mounted) return;
                     Navigator.pop(context);
                   },
                   child: const Text('알림 설정'),
@@ -240,7 +240,7 @@ class _ActivityAlarmState extends State<ActivityAlarm> {
                   onPressed: () async {
                     await activityBloc.deleteSchedule(widget.schedule);
 
-                    if (!mounted) return;
+                    if (!context.mounted) return;
                     Navigator.pop(context);
                   },
                   child: const Text('알림 취소'),

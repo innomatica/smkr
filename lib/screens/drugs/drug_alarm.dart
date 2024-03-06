@@ -11,10 +11,10 @@ class DrugAlarm extends StatefulWidget {
   final Drug drug;
   final Schedule schedule;
   const DrugAlarm({
-    Key? key,
+    super.key,
     required this.drug,
     required this.schedule,
-  }) : super(key: key);
+  });
 
   @override
   State<DrugAlarm> createState() => _DrugAlarmState();
@@ -182,7 +182,7 @@ class _DrugAlarmState extends State<DrugAlarm> {
                     await drugBloc.update(widget.drug);
                     await drugBloc.addSchedule(widget.schedule);
 
-                    if (!mounted) return;
+                    if (!context.mounted) return;
                     Navigator.pop(context);
                   },
                   child: const Text('알림 설정'),
@@ -197,7 +197,7 @@ class _DrugAlarmState extends State<DrugAlarm> {
                   onPressed: () async {
                     await drugBloc.deleteSchedule(widget.schedule);
 
-                    if (!mounted) return;
+                    if (!context.mounted) return;
                     Navigator.pop(context);
                   },
                   child: const Text('알림 취소'),
